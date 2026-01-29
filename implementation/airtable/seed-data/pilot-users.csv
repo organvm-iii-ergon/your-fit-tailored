@@ -1,0 +1,6 @@
+display_name,operational_state,weekly_anchor,email,address_line1,city,state,zip
+Alice Test,Active,Monday,alice@test.local,123 Main St,San Francisco,CA,94102
+Bob Test,Active,Tuesday,bob@test.local,456 Oak Ave,San Francisco,CA,94103
+Carol Test,Active,Wednesday,carol@test.local,789 Pine Blvd,San Francisco,CA,94104
+David Test,Active,Thursday,david@test.local,321 Elm St,San Francisco,CA,94105
+Eve Test,Active,Friday,eve@test.local,654 Maple Dr,San Francisco,CA,94106

@@ -1,0 +1,43 @@
+state_name,entity_type,description,sort_order
+Active,User,Cycles may be scheduled and committed,1
+Paused,User,Cycles not scheduled but state preserved,2
+HoldPayment,User,Payment issue blocks shipping,3
+HoldIdentity,User,Identity verification required,4
+HoldLogistics,User,Address or delivery issue blocks shipping,5
+Closed,User,Contract terminated,6
+Available,Garment,Eligible for assignment,1
+Reserved,Garment,Selected for cycle not yet packed,2
+Packed,Garment,Physically in a box,3
+InTransitOutbound,Garment,Shipped to user,4
+Delivered,Garment,At user location,5
+InUse,Garment,Wear window active,6
+InTransitReturn,Garment,Returning from user,7
+ReceivedReturn,Garment,Back at facility pending inspection,8
+Quarantine,Garment,Withheld due to hygiene or contamination,9
+Refurbish,Garment,In cleaning or refresh processing,10
+Repair,Garment,In repair processing,11
+Lost,Garment,Declared non-recoverable,12
+Retired,Garment,Lifecycle complete and ineligible,13
+Disposed,Garment,Physically removed from system,14
+Created,Box,Container exists,1
+Planned,Box,Contents committed logically,2
+Picking,Box,Warehouse actions in progress,3
+PackedVerified,Box,Contents confirmed,4
+Shipped,Box,Outbound in transit,5
+Delivered,Box,At user location,6
+ReturnInitiated,Box,Return expected,7
+Returning,Box,Inbound in transit,8
+Received,Box,At facility,9
+Reconciled,Box,Contents verified,10
+Closed,Box,Available for reuse,11
+Scheduled,Cycle,Planned but reversible,1
+Committed,Cycle,Inventory locked,2
+FulfillmentInProgress,Cycle,Packing underway,3
+OutboundInTransit,Cycle,Shipped,4
+Delivered,Cycle,At user,5
+WearWindowOpen,Cycle,User wearing,6
+ReturnWindowOpen,Cycle,Return expected,7
+ReturnInTransit,Cycle,Coming back,8
+CloseoutInspection,Cycle,Inspecting returns,9
+Settled,Cycle,Charges computed,10
+Closed,Cycle,Immutable record,11

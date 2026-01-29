@@ -1,0 +1,26 @@
+error_code,error_name,error_message,resolution_hint
+E001,GarmentAlreadyReserved,This garment is already reserved for another cycle,Select a different garment or wait for the current cycle to complete
+E002,CycleDuplicate,A cycle already exists for this user and week,Check existing cycles for this user before creating new ones
+E003,InvalidTransition,Cannot transition from {from_state} to {to_state},Review the allowed state transitions in the documentation
+E004,UserNotActive,User must be in Active state to commit cycle,Resolve any holds on the user account first
+E005,LifecycleExceeded,Garment has exceeded its lifecycle limit,This garment should be retired and removed from circulation
+E006,BoxVarianceUnresolved,Packing variance must be resolved before shipping,Either correct the pack to match plan or commit to observed contents
+E007,ConditionGradeTooLow,Garment condition grade is too low for allocation,Send garment for repair or retire it
+E008,CannotUnassignAfterPacking,Cannot unassign garment after it has been packed,Remove garment from box first
+E009,BoxNotInPickingState,Box must be in Picking state to add garments,Start the packing process first
+E010,GarmentBoxCycleMismatch,Garment and box must belong to the same cycle,Check cycle assignments
+E011,BoxNotYetShipped,Box has not been shipped yet,Complete the shipping process first
+E012,BoxNotInPlannedState,Box must be in Planned state to commit cycle,Ensure box planning is complete
+E013,GarmentReservationMismatch,Reserved garments do not match box contents,Verify all planned garments are reserved
+E014,PaymentAuthorizationFailed,Payment authorization failed for this user,Contact user to update payment method
+E015,CannotCancelAfterCommitment,Cannot cancel cycle after commitment,Use exception workflow for committed cycles
+E016,NoTrackingNumber,Tracking number is required for shipping,Enter a valid tracking number
+E020,MissingRequiredFields,Required fields are missing for user creation,Complete all required fields
+E021,InvalidPaymentMethod,Payment method is not valid,Verify payment details
+E022,InvalidShippingAddress,Shipping address is not valid,Verify address details
+E023,ActiveCycleInProgress,Cannot pause user with active cycle in progress,Wait for current cycle to complete
+E024,GarmentsInUserCustody,User still has garments in custody,Receive all returns first
+E025,PaymentMethodInvalid,Payment method is no longer valid,Update payment method before resuming
+E026,ShippingAddressInvalid,Shipping address is no longer valid,Update address before resuming
+E027,GarmentsStillInCustody,Cannot close account with garments still in custody,Process all returns first
+E028,OutstandingBalance,Cannot close account with outstanding balance,Settle all charges first

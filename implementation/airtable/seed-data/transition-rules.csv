@@ -1,0 +1,54 @@
+entity_type,from_state,to_state,preconditions,postconditions,is_active,description
+Garment,Available,Reserved,current_cycle_id == null && over_limit == false && condition_grade != 'F',Set current_cycle_id,TRUE,Reserve garment for cycle allocation
+Garment,Reserved,Available,current_box_id == null,Clear current_cycle_id,TRUE,Unassign garment before packing
+Garment,Reserved,Packed,current_box_id != null && box.state == 'Picking',Add to box.actual_contents,TRUE,Scan garment into box during packing
+Garment,Packed,InTransitOutbound,box.state == 'Shipped',None,TRUE,Box shipped to user
+Garment,InTransitOutbound,Delivered,box.state == 'Delivered',None,TRUE,Delivery confirmed
+Garment,Delivered,InUse,cycle.state == 'WearWindowOpen',None,TRUE,Wear window opened
+Garment,InUse,InTransitReturn,box.state IN ('ReturnInitiated' OR 'Returning'),None,TRUE,Return initiated
+Garment,InTransitReturn,ReceivedReturn,box.state == 'Received',None,TRUE,Return received at facility
+Garment,ReceivedReturn,Refurbish,condition_grade IN ('A' OR 'B' OR 'C') && over_limit == false,Increment wear_count,TRUE,Normal refurbishment path
+Garment,ReceivedReturn,Quarantine,inspection.safety_flag == true,None,TRUE,Safety or contamination issue
+Garment,ReceivedReturn,Retired,over_limit == true || condition_grade == 'F',Set retired_at and clear cycle/box refs,TRUE,Lifecycle bounds exceeded
+Garment,Refurbish,Available,refurbishment.complete == true && over_limit == false,Increment wash_count and clear cycle/box refs,TRUE,Ready for next cycle
+Garment,Quarantine,Repair,quarantine.resolution == 'repair',None,TRUE,Quarantine resolved with repair needed
+Garment,Repair,Refurbish,repair.complete == true,Increment repair_count,TRUE,Repair complete proceed to refurb
+Garment,InTransitOutbound,Lost,declaration.reason != null,Trigger settlement,TRUE,Garment declared lost outbound
+Garment,Delivered,Lost,declaration.reason != null,Trigger settlement,TRUE,Garment declared lost at user
+Garment,InUse,Lost,declaration.reason != null,Trigger settlement,TRUE,Garment declared lost during use
+Garment,InTransitReturn,Lost,declaration.reason != null,Trigger settlement,TRUE,Garment declared lost on return
+Garment,Retired,Disposed,TRUE,None,TRUE,Physical removal from system
+Cycle,,Scheduled,user.state == 'Active' && no existing cycle for user+week,Set scheduled_at,TRUE,Create new scheduled cycle
+Cycle,Scheduled,Committed,user.state == 'Active' && box.state == 'Planned' && all garments Reserved,Set committed_at and lock inventory,TRUE,Commit cycle at deadline
+Cycle,Scheduled,Cancelled,TRUE,Release garment reservations,TRUE,Cancel before commitment
+Cycle,Committed,FulfillmentInProgress,box.state == 'Planned',Set box to Picking,TRUE,Start warehouse fulfillment
+Cycle,FulfillmentInProgress,OutboundInTransit,box.state == 'PackedVerified' && tracking != null,Set shipped_at,TRUE,Ship the box
+Cycle,OutboundInTransit,Delivered,delivery signal received,Set delivered_at,TRUE,Delivery confirmed
+Cycle,Delivered,WearWindowOpen,TRUE,Transition garments to InUse,TRUE,Open wear window
+Cycle,WearWindowOpen,ReturnWindowOpen,wear_window_elapsed,Set box to ReturnInitiated,TRUE,Wear window ended
+Cycle,ReturnWindowOpen,ReturnInTransit,return signal received,Set return_initiated_at,TRUE,Return pickup confirmed
+Cycle,ReturnInTransit,CloseoutInspection,box.state == 'Received',Set return_received_at,TRUE,Return received at facility
+Cycle,CloseoutInspection,Settled,all garments inspected && settlement computed,Set settled_at,TRUE,Settlement complete
+Cycle,Settled,Closed,TRUE,Set closed_at and close box,TRUE,Cycle finalized
+User,,Active,required fields present && payment valid && address valid,None,TRUE,Activate new user
+User,Active,Paused,no cycle in Committed through ReturnWindowOpen,Cancel scheduled cycles,TRUE,User requests pause
+User,Paused,Active,payment valid && address valid,Schedule next cycle,TRUE,User requests resume
+User,Active,HoldPayment,payment authorization failed,Block cycle commitment,TRUE,Payment issue detected
+User,HoldPayment,Active,payment restored,Re-evaluate blocked cycles,TRUE,Payment resolved
+User,Active,HoldLogistics,return overdue > threshold,Block cycle commitment,TRUE,Late return detected
+User,HoldLogistics,Active,all overdue returns received,Re-evaluate blocked cycles,TRUE,Returns received
+User,*,HoldIdentity,verification trigger detected,Block all operations,TRUE,Identity verification required
+User,HoldIdentity,*,verification successful,Restore previous state,TRUE,Identity verified
+User,*,Closed,all garments returned && all balances settled,Archive user data,TRUE,Contract terminated
+Box,,Created,box_barcode is unique,None,TRUE,Register new box
+Box,Created,Planned,cycle assigned && planned_contents set,Set cycle_id,TRUE,Assign box to cycle
+Box,Closed,Planned,cycle assigned && planned_contents set,Set cycle_id,TRUE,Reuse box for new cycle
+Box,Planned,Picking,cycle.state == 'Committed',None,TRUE,Start packing
+Box,Picking,PackedVerified,variance resolved,None,TRUE,Pack verified
+Box,PackedVerified,Shipped,tracking_outbound != null,None,TRUE,Box shipped
+Box,Shipped,Delivered,delivery signal received,None,TRUE,Delivery confirmed
+Box,Delivered,ReturnInitiated,cycle.state == 'ReturnWindowOpen',None,TRUE,Return expected
+Box,ReturnInitiated,Returning,return signal received,Set tracking_return if available,TRUE,Return in transit
+Box,Returning,Received,box scanned at receiving,None,TRUE,Box received
+Box,Received,Reconciled,all garments inspected,Compare returned vs shipped,TRUE,Contents verified
+Box,Reconciled,Closed,cycle.state IN ('Settled' OR 'Closed'),Clear cycle and contents refs,TRUE,Box ready for reuse
