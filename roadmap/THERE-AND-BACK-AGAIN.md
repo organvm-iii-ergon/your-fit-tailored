@@ -449,7 +449,155 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 
 ---
 
-## 7. Risk Framework
+## 7. Immediate Pre-Pilot Actions
+
+Before launching the 25-user pilot, the following actions must be completed to de-risk the validation phase.
+
+### Action 1: Mini-Pilot Validation (Critical)
+
+**Purpose**: Validate return compliance before full pilot commitment.
+
+**Scope**:
+- 5 users ("friends and family")
+- 2 weeks, full cycles
+- Measure actual return timing distribution
+
+**Success Criteria**: >90% on-time return without excessive friction.
+
+**Why This Matters**: Return compliance is the "single weakest assumption" per the integrated specification. If users don't return on time, the entire cadence model breaks down. Better to learn this with 5 users than 25.
+
+### Action 2: Price Cohort Test
+
+**Purpose**: Validate unit economics at higher price point.
+
+**Scope**:
+- Split pilot: 15 users at $50/week, 10 users at $65/week
+- Compare conversion, satisfaction, and contribution margin
+
+**Success Criteria**: $65 cohort shows acceptable conversion with improved margin.
+
+**Why This Matters**: At $50/week, contribution margin is ~14% with no safety buffer. The $65 price point provides margin headroom for operational variance.
+
+### Action 3: Payment Integration Specification
+
+**Purpose**: Complete payment handling specification before billing goes live.
+
+**Required Deliverable**: `/specs/features/payment/spec.md` covering:
+- Stripe/Braintree integration patterns
+- Pre-authorization timing (at commitment)
+- Decline handling workflow
+- Refund/credit policies
+- Settlement computation logic
+
+---
+
+## 8. Risk Analysis
+
+Comprehensive risk assessment based on evaluation report findings. See `/analysis/evaluation-to-growth-report.md` for full analysis.
+
+### Critical Risks
+
+#### Risk 1: Return Compliance Cascade (CRITICAL)
+
+**Description**: If late return rate exceeds 15%, a cascade of negative effects compounds:
+
+```
+p_late_return > 15%
+       │
+       ▼
+Buffer $B must increase → More inventory per user
+       │
+       ▼
+Capital tied up in buffer → Cash flow stress
+       │
+       ▼
+Next cycle delayed → User trust erodes
+       │
+       ▼
+Churn increases → Subscriber loss
+       │
+       ▼
+Fixed costs spread over fewer users → Margin collapse
+```
+
+**Mitigation**:
+- Pre-pilot validation with small cohort (Action 1 above)
+- Aggressive deposit/hold policy
+- Proactive return facilitation communications
+- Clear escalation path defined in SOPs
+
+**Status**: Unmitigated until mini-pilot completes.
+
+#### Risk 2: Unit Economics Sensitivity (HIGH)
+
+**Description**: The $7/week contribution margin at $50/week has no safety buffer.
+
+Sensitivity analysis shows:
+- If shipping increases from $34 to $50: Margin collapses
+- If garment lifespan drops from 20 to 10 uses: Margin halves
+- If cleaning cost doubles: Margin eliminated
+
+**Mitigation**:
+- Test higher price point ($65-75/week) in pilot
+- Negotiate carrier rates before scale
+- Monitor cost drivers weekly during pilot
+
+**Status**: Partially mitigated (honest analysis exists, higher price cohort planned).
+
+### Medium Risks
+
+#### Risk 3: Airtable Scaling Limits (MEDIUM)
+
+**Description**: Airtable constraints will become limiting factors:
+- 50,000 record limit per base
+- Rate limits on automations
+- No real-time event streaming
+- Limited concurrent user capacity
+
+At 250 users × 52 weeks × 3 items = 39,000 garment-cycle records/year.
+
+**Mitigation**:
+- Document migration path to scalable platform (Postgres + custom app)
+- Trigger migration planning before reaching 150 users
+- Monitor record growth weekly
+
+**Status**: Documented, not mitigated.
+
+#### Risk 4: Manual Allocation Bottleneck (MEDIUM)
+
+**Description**: Weekly allocation at pilot (25 cycles) requires 1-2 hours of operator time. At 250 users, this becomes 10-20 hours/week—essentially a full-time role.
+
+**Mitigation**:
+- Prioritize Fit Intelligence MVP before scaling past 75 users
+- Begin specification work during pilot weeks 4-8
+- Track allocation time weekly to model scaling curve
+
+**Status**: Planned for Epoch 3.
+
+#### Risk 5: Key Person Dependencies (MEDIUM)
+
+**Description**: Pilot operations depend on specific individuals with no redundancy specified.
+
+**Mitigation**:
+- SOPs documented (complete)
+- Cross-train operators during build phase
+- Establish on-call rotation
+
+**Status**: Partially mitigated.
+
+### Risk Matrix Summary
+
+| Risk | Likelihood | Impact | Priority | Status |
+|------|------------|--------|----------|--------|
+| Return non-compliance | Medium | Critical | P1 | Unmitigated |
+| Unit economics failure | High | Critical | P1 | Partial |
+| Airtable scaling limits | Medium | High | P2 | Documented |
+| Manual allocation bottleneck | High | Medium | P2 | Planned |
+| Key person dependency | Medium | Medium | P3 | Partial |
+
+---
+
+## 9. Risk Framework
 
 ### Graduate Criteria (All Must Be True)
 
@@ -492,7 +640,7 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 
 ---
 
-## 8. Success Metrics by Phase
+## 10. Success Metrics by Phase
 
 ### Epoch 1: Foundation Build
 
@@ -548,9 +696,38 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 
 ---
 
-## 9. Known Gaps and Future Work
+## 11. Known Gaps and Future Work
 
-### Specification Gaps
+*Updated 2026-01-29 based on Evaluation-to-Growth Report findings.*
+
+### Critical Specification Gaps (Pre-Pilot)
+
+| Gap | Current Status | Required For | Priority |
+|-----|----------------|--------------|----------|
+| **User Acquisition Strategy** | Absent | Pilot recruitment | Critical |
+| **Payment Integration Specification** | Absent | Pilot billing | Critical |
+| **Regulatory Compliance Checklist** | Absent | Legal protection | High |
+
+**User Acquisition Gap**: Despite extensive operational specification, there is no plan for:
+- User acquisition channels beyond "direct marketing" and "referral"
+- Customer acquisition cost (CAC) modeling
+- Brand positioning and messaging strategy
+- Timeline for recruiting 25 pilot users
+
+**Payment Integration Gap**: Payment appears in state machines (HoldPayment state) but implementation is missing:
+- No payment processor specified
+- No billing cycle definition (pre-pay vs. post-pay)
+- No deposit/liability policy specification
+- Settlement computation logic undefined
+
+**Regulatory Compliance Gap**: No specification addresses:
+- Consumer protection regulations for subscription services
+- State-by-state compliance requirements
+- Sustainability claims verification (greenwashing risk)
+- Data privacy (fit profiles contain body measurements)
+- Health/hygiene certification requirements
+
+### Specification Gaps (Post-Pilot)
 
 | Gap | Current Status | Required For | Priority |
 |-----|----------------|--------------|----------|
@@ -560,6 +737,12 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 | Churn Prediction | Not specified | Epoch 3 | Medium |
 | Scale Architecture | Theoretical only | Epoch 4 | Low (for now) |
 | Multi-tenant Support | Not addressed | Epoch 4 (if B2B) | Low |
+
+**Fit Intelligence MVP**: The core differentiator ("always fits") relies on operator judgment during pilot. Specification needed for:
+- Minimum viable recommendation algorithm
+- Feedback capture UX
+- Profile update triggers
+- Confidence scoring methodology
 
 ### Financial Model Gaps
 
@@ -591,7 +774,7 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 
 ---
 
-## 10. Appendices
+## 12. Appendices
 
 ### A. Document Cross-References
 
@@ -604,6 +787,25 @@ Your-Fit-Tailored operates on three nested feedback loops, each with its own "th
 | Implementation Status | `implementation/IMPLEMENTATION-STATUS.md` | Current build progress |
 | Airtable Setup | `implementation/airtable/SETUP-GUIDE.md` | Database configuration |
 | Retool Setup | `implementation/retool/SETUP-GUIDE.md` | UI configuration |
+| **Evaluation Report** | `analysis/evaluation-to-growth-report.md` | Comprehensive project analysis (2026-01-29) |
+
+### A.1 Evaluation Report Summary
+
+The Evaluation-to-Growth Report (`analysis/evaluation-to-growth-report.md`) provides comprehensive analysis across 9 dimensions:
+
+**Key Findings**:
+- Constitution-driven design creates strong architectural coherence
+- State transition contracts are production-ready
+- Unit economics at $50/week are marginal (~14% contribution margin)
+- Return compliance remains the single weakest assumption
+- User acquisition strategy is absent
+
+**Top Recommendations**:
+1. Validate return compliance before full pilot launch with 5-user mini-pilot
+2. Increase pilot price to $65-75/week or reduce cadence to improve margin safety
+3. Prioritize user acquisition specification before scaling past pilot
+
+See full report for detailed analysis, risk matrix, and strategic recommendations.
 
 ### B. Key Variable Reference
 
