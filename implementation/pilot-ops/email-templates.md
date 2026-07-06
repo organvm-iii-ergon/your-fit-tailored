@@ -229,7 +229,7 @@ We want to help you get back on track. Please reply to this email or call us at 
 | `[Carrier]` | Configuration or ShipmentBatch.carrier | "UPS" |
 | `[Operator Name]` | Current operator | "Sarah" |
 | `[Project Name]` | Configuration | "Your Fit" |
-| `[Phone]` | Configuration | "[phone redacted]" |
+| `[Phone]` | Configuration | "(555) 123-4567" |
 
 ---
 
