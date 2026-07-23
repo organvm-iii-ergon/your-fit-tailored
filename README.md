@@ -28,7 +28,7 @@ This is not a retail marketplace. It is a **temporal service** evaluated on thro
 - [The Problem](#the-problem)
 - [The Approach](#the-approach)
 - [Constitutional Invariants](#constitutional-invariants)
-- [Technical Architecture](#technical-architecture)
+- [Architecture](#architecture)
 - [Domain Model](#domain-model)
 - [System Subsystems](#system-subsystems)
 - [State Machines](#state-machines)
@@ -41,6 +41,7 @@ This is not a retail marketplace. It is a **temporal service** evaluated on thro
 - [Cross-Organ References](#cross-organ-references)
 - [Related Work](#related-work)
 - [Contributing](#contributing)
+- [Contact](#contact)
 - [License](#license)
 - [Author](#author)
 
@@ -111,7 +112,7 @@ Theoretical failure occurs not when a user dislikes an outfit, but when the user
 
 ---
 
-## Technical Architecture
+## Architecture
 
 ### System Boundary
 
@@ -467,6 +468,12 @@ This repository is currently in **pre-pilot specification phase**. The specifica
 3. **Pilot operations.** Once the pilot launches, operational learning is the primary value creation activity. Exception documentation, process improvement suggestions, and metrics analysis are all valuable contributions.
 
 Please read `memory/constitution.md` before contributing. All contributions must satisfy the cross-cutting verification question: *Does this choice reduce uncertainty, friction, or variance across cycles without increasing cognitive load on the user?*
+
+---
+
+## Contact
+
+For questions, feedback, or contributions related to Your-Fit-Tailored, reach out via [GitHub](https://github.com/4444J99).
 
 ---
 
