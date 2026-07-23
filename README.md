@@ -147,14 +147,14 @@ The system resolves into four primary entity classes. No entity is static. All e
 
 ### Identifier Conventions
 
-All identifiers are tenant- and time-scoped using environment-variable placeholders for multi-tenant isolation:
+All identifiers are tenant- and time-scoped using named placeholders for multi-tenant isolation:
 
-- `$TENANT_ID` — Multi-tenant isolation boundary
-- `$USER_ID` — User identity within tenant
-- `$GARMENT_ID` — Physical asset tracking (barcode-linked)
-- `$BOX_ID` — Container tracking (barcode-linked)
-- `$CYCLE_ID` — Temporal contract instance
-- `$WEEK_ID` — Derived from user anchor and platform calendar
+- `TENANT_ID` — Multi-tenant isolation boundary
+- `USER_ID` — User identity within tenant
+- `GARMENT_ID` — Physical asset tracking (barcode-linked)
+- `BOX_ID` — Container tracking (barcode-linked)
+- `CYCLE_ID` — Temporal contract instance
+- `WEEK_ID` — Derived from user anchor and platform calendar
 
 ### Entity Relationships
 
