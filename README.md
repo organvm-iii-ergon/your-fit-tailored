@@ -1,30 +1,75 @@
 [![ORGAN-III: Ergon](https://img.shields.io/badge/ORGAN--III-Ergon-1b5e20?style=flat-square)](https://github.com/organvm-iii-ergon)
-[![Language: JavaScript](https://img.shields.io/badge/Language-JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Status: Design only](https://img.shields.io/badge/Status-Design%20only-lightgrey?style=flat-square)](project-record.yml)
+[![Documentation: Class A](https://img.shields.io/badge/Documentation-Class%20A-5c6ac4?style=flat-square)](docs/README.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-[![Status: Pilot Ready](https://img.shields.io/badge/Status-Pilot%20Ready-brightgreen?style=flat-square)]()
+[![CI](https://github.com/4444J99/your-fit-tailored/actions/workflows/ci.yml/badge.svg)](https://github.com/4444J99/your-fit-tailored/actions/workflows/ci.yml)
 
 # Your-Fit-Tailored
 
-[![CI](https://github.com/organvm-iii-ergon/your-fit-tailored/actions/workflows/ci.yml/badge.svg)](https://github.com/organvm-iii-ergon/your-fit-tailored/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey)](https://github.com/organvm-iii-ergon/your-fit-tailored)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/organvm-iii-ergon/your-fit-tailored/blob/main/LICENSE)
-[![Organ III](https://img.shields.io/badge/Organ-III%20Ergon-F59E0B)](https://github.com/organvm-iii-ergon)
-[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/organvm-iii-ergon/your-fit-tailored)
-[![Markdown](https://img.shields.io/badge/lang-Markdown-informational)](https://github.com/organvm-iii-ergon/your-fit-tailored)
+> A design and implementation-planning record for a proposed weekly clothing service that would circulate garments, learn fit over time, and remove routine shopping decisions.
 
+[Published documentation](https://4444j99.github.io/your-fit-tailored/) ·
+[Two-minute explanation](docs/audiences/general.md) ·
+[Technical edition](docs/audiences/technical.md) ·
+[Humanities edition](docs/audiences/humanities.md) ·
+[Operational edition](docs/audiences/business.md) ·
+[Evaluation record](docs/audiences/evaluator.md) ·
+[Claim-level evidence](docs/evidence/README.md)
 
-**A temporal service delivering continuous, low-friction apparel experiences through circular weekly subscription.**
+## What am I looking at?
 
-Your-Fit-Tailored is a specification-driven seed for a circular apparel subscription platform. Users never shop, never decide, and never accumulate garments. A curated box of outfits arrives every week; the user wears the items, returns last week's box, and the system cleans, refurbishes, and redeploys inventory through a closed-loop pipeline. Fit confidence compounds with every cycle. Cognitive load asymptotically approaches zero.
+This is the source repository and documented project record for
+Your-Fit-Tailored. A repository is the organized collection of writing, code,
+design decisions, examples, tests, and revision history used to define and
+inspect a project.
 
-This is not a retail marketplace. It is a **temporal service** evaluated on throughput, latency, error recovery, and lifecycle yield — not conversion rate or sell-through.
+The intended service is not running here. The repository records the proposed
+system, its operating model, its economics, setup instructions for an Airtable
+and Retool pilot, and a small TypeScript package. It does **not** contain
+evidence of a configured platform, an executed pilot, active users, or business
+outcomes. The roadmap places the project at the end of Epoch 0: conception and
+specification.
 
 > *Part of the [ORGAN-III: Ergon](https://github.com/organvm-iii-ergon) commerce organ — products, services, and revenue-generating systems within the [organvm](https://github.com/meta-organvm) creative-institutional ecosystem.*
 
----
+## Choose your reading path
+
+| I am reading as… | Start here |
+|---|---|
+| A general reader | [What the project proposes, in two minutes](docs/audiences/general.md) |
+| A software engineer | [Architecture, executable code, tests, and gaps](docs/audiences/technical.md) |
+| A humanities scholar or artist | [Dress, agency, memory, and circular time](docs/audiences/humanities.md) |
+| An operator, founder, or industry practitioner | [Proposed workflow, requirements, and risks](docs/audiences/business.md) |
+| A hiring manager, collaborator, or evaluator | [Contribution boundaries and inspection map](docs/audiences/evaluator.md) |
+
+## Project at a glance
+
+| | |
+|---|---|
+| **What it is** | A specification corpus, operating model, setup package, and limited code scaffold for a proposed circular weekly apparel subscription service. |
+| **Problem addressed** | The design asks whether fit learning and closed-loop logistics can reduce clothing-related decision load without losing operational state truth. |
+| **Current state** | **Design only.** Specifications and setup artifacts exist; the foundation build, live pilot, and operational runtime are not evidenced in this repository. |
+| **Intended users** | Future subscribers and pilot operators. No current user cohort is evidenced. |
+| **What Anthony built** | Project framing, system and operating design, repository implementation artifacts, public documentation, CI, and maintenance. Initial commits explicitly credit Claude Opus 4.5 as a co-author; Git history does not support sole line-by-line authorship claims. |
+| **Inspectable evidence** | Specifications, setup guides, seed data, six Airtable-targeted scripts, operational checklists, unit-economics workbooks, Git history, and 16 passing tests for a separate generic TypeScript scaffold. |
+| **Known limitations** | No configured Airtable or Retool environment, no service runtime, no completed end-to-end pilot test, no user or outcome data, and no implemented fit/state/logistics platform in `src/`. Standard dependency installation and ESLint are also currently blocked by a TypeScript/tooling peer-version conflict. |
+
+The machine-readable factual substrate is [`project-record.yml`](project-record.yml).
+Material public claims and their boundaries are listed in the
+[`evidence record`](docs/evidence/README.md).
+
+## Canonical project documentation
+
+The remainder of this README preserves the long-form design argument. Unless a
+passage explicitly says otherwise, descriptions of platform behavior are
+specifications for a future implementation, not reports of a deployed service.
 
 ## Table of Contents
 
+- [What am I looking at?](#what-am-i-looking-at)
+- [Choose your reading path](#choose-your-reading-path)
+- [Project at a glance](#project-at-a-glance)
+- [Canonical project documentation](#canonical-project-documentation)
 - [The Problem](#the-problem)
 - [The Approach](#the-approach)
 - [Constitutional Invariants](#constitutional-invariants)
@@ -36,7 +81,7 @@ This is not a retail marketplace. It is a **temporal service** evaluated on thro
 - [Implementation Stack](#implementation-stack)
 - [Repository Structure](#repository-structure)
 - [Installation and Quick Start](#installation-and-quick-start)
-- [Features](#features)
+- [Specified capabilities and pilot hypotheses](#specified-capabilities-and-pilot-hypotheses)
 - [Roadmap: The Five Epochs](#roadmap-the-five-epochs)
 - [Cross-Organ References](#cross-organ-references)
 - [Related Work](#related-work)
@@ -49,27 +94,27 @@ This is not a retail marketplace. It is a **temporal service** evaluated on thro
 
 ## The Problem
 
-Traditional clothing consumption creates compounding cognitive debt across four dimensions that current market solutions fail to address simultaneously:
+The project frames traditional clothing consumption as a source of compounding cognitive debt across four dimensions. These are design premises to test, not findings from a user study in this repository:
 
 - **Decision fatigue.** "I have nothing to wear" despite full closets. The paradox of choice compounds weekly as wardrobes grow but satisfaction does not. Every shopping session demands style evaluation, size guessing, price comparison, and return-risk calculation. The cognitive cost is invisible but cumulative.
 
 - **Shopping anxiety.** Overwhelming choice, uncertain fit, buyer's remorse. Online ordering amplifies uncertainty — sizing varies across brands, photographs misrepresent texture and drape, and return logistics impose their own friction. Users spend mental energy on acquisition rather than experience.
 
-- **Wardrobe guilt.** Unused garments accumulate, money wasted. The average American wears only 20% of their wardrobe regularly. The remaining 80% represents stranded capital and environmental waste, creating a psychological burden that compounds with each new purchase.
+- **Wardrobe guilt.** Unused garments can accumulate while money, material, and storage remain committed to clothing that is rarely worn. The repository treats this as a design premise; it does not contain a study establishing a universal utilization rate.
 
 - **Body confidence concerns.** Fit uncertainty amplified by online ordering. Bodies change — weight fluctuates, preferences drift, seasons shift needs. Static sizing captured once at purchase time fails to track these changes, leading to closets full of garments that almost fit.
 
-Users do not want more clothes. They want to look good without thinking about it.
+The resulting design thesis is: the intended user does not want more clothing decisions; they want to look good without repeatedly managing the process.
 
 ---
 
 ## The Approach
 
-Your-Fit-Tailored reframes apparel consumption as a **temporal service** optimized for continuity, correctness of state, and stable weekly fulfillment. The system operates on a specification-first methodology where every design decision flows from six constitutional invariants, and every downstream artifact — from database schema to operator SOP — traces back to formal requirements.
+Your-Fit-Tailored reframes apparel consumption as a **temporal service** optimized for continuity, correctness of state, and stable weekly fulfillment. The repository uses a specification-first methodology in which design decisions flow from six constitutional invariants and downstream artifacts — from proposed database schema to operator SOP — are intended to trace back to formal requirements.
 
 ### Specification-First Development
 
-The project follows a rigorous specification-driven development (SDD) methodology. Theoretical foundations precede architecture. Architecture precedes implementation. Implementation precedes deployment. No artifact exists without a formal specification that defines what must be true for the system to work. This approach ensures that the platform's correctness guarantees survive implementation decisions, vendor choices, and team changes.
+The domain-design corpus follows a specification-driven development (SDD) methodology. Theoretical foundations precede architecture; architecture precedes implementation; implementation would precede deployment. The intended rule is that a domain artifact should resolve to a formal statement of what must be true. This sequence is designed to keep requirements and violations inspectable across later vendor, tooling, and team decisions. The separate generic TypeScript scaffold does not yet satisfy that traceability contract for the proposed platform.
 
 The specification corpus includes:
 
@@ -89,7 +134,7 @@ The specification corpus includes:
      └──────────────────────────────────────────────────────────┘
 ```
 
-Garments circulate. Learning compounds. Users never shop, never decide, never accumulate. Each cycle that completes feeds the next: returns generate fit data, fit data improves allocation, better allocation increases satisfaction, satisfaction drives retention, retention justifies investment, investment expands inventory, inventory enables more users, more users generate more returns. The business model itself is circular — not just in logistics, but in learning and capital efficiency.
+In the proposed service, garments circulate and learning is intended to compound. Users would not browse or accumulate the circulated garments. Each completed cycle would feed the next: returns generate fit data; fit data could improve allocation; improved allocation could support satisfaction and retention; retained revenue could fund more inventory. These are causal hypotheses encoded in the design, not observed results from a pilot.
 
 ---
 
@@ -114,9 +159,13 @@ Theoretical failure occurs not when a user dislikes an outfit, but when the user
 
 ## Architecture
 
+This section describes the canonical **specified architecture**. The six
+subsystems and their event-sourced state model are not implemented by the
+current TypeScript modules in `src/`.
+
 ### System Boundary
 
-The platform is bounded as a temporal service. All components are evaluated on throughput, latency, error recovery, and lifecycle yield. The system begins at user onboarding and terminates only at account closure, with no concept of a "completed purchase." This boundary explicitly excludes one-time retail transactions, user-initiated browsing, and static ownership models.
+The proposed platform is bounded as a temporal service. Its components would be evaluated on throughput, latency, error recovery, and lifecycle yield. The designed system begins at user onboarding and terminates only at account closure, with no concept of a "completed purchase." This boundary explicitly excludes one-time retail transactions, user-initiated browsing, and static ownership models.
 
 ### Architectural Principles
 
@@ -164,7 +213,7 @@ A single weekly cycle binds one user to one box containing multiple garments. Th
 
 ## System Subsystems
 
-The architecture decomposes into six logical subsystems, each owning a distinct class of responsibility:
+The specified architecture decomposes into seven logical subsystems, each owning a distinct class of responsibility. These are design boundaries, not deployed services:
 
 ### StateAuthoritySubsystem
 
@@ -189,6 +238,10 @@ Defines which decisions are optional and what defaults apply. Responsible for en
 ### ContractEnforcementSubsystem
 
 Manages user eligibility through operational holds (HoldPayment, HoldLogistics, HoldIdentity) that gate cycle commitment without corrupting historical state. Handles settlement computation, exception escalation, and the boundary between normal operations and intervention-required scenarios.
+
+### ObservabilityAuditRecoverySubsystem
+
+Specifies traceability from an outcome back to events, decisions, and state transitions. It defines anomaly detection and controlled repair flows that preserve history while correcting current state. No runtime telemetry or recovery service is implemented in this repository.
 
 ---
 
@@ -230,7 +283,7 @@ Each stage has defined preconditions and postconditions. A cycle cannot advance 
 
 ## Unit Economics Model
 
-Revenue is subscription time, not garments shipped. Costs are dominated by labor, cleaning, and logistics variance rather than COGS in the traditional sense. The canonical unit of analysis is one **User-Week Cycle** — a successfully fulfilled weekly service interval for one active user.
+The economic model defines revenue as subscription time rather than garments shipped. It models labor, cleaning, and logistics variance as major costs rather than relying on traditional retail COGS alone. Its canonical unit of analysis is one **User-Week Cycle** — a successfully fulfilled weekly service interval for one active user.
 
 ### Per-Cycle Cost Components
 
@@ -246,7 +299,7 @@ Revenue is subscription time, not garments shipped. Costs are dominated by labor
 
 ### Inventory Capital Requirement
 
-The system requires an **inventory multiple** — effective garments per active user — calculated as:
+The model requires an **inventory multiple** — effective garments per active user — calculated as:
 
 ```
 INVENTORY_MULTIPLE = ITEMS_PER_BOX * TOTAL_CYCLE_TIME_WEEKS * SAFETY_STOCK_FACTOR
@@ -262,7 +315,7 @@ The model is economically viable only if the marginal cost of an additional cycl
 
 ## Implementation Stack
 
-The pilot implementation uses a no-code stack optimized for speed-to-validation, not production scale:
+The planned pilot build targets a no-code stack optimized for speed-to-validation, not production scale. The repository contains setup guides, seed data, and scripts for this stack; it does not contain exports or other evidence that the Airtable base or Retool applications were configured:
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
@@ -274,7 +327,7 @@ The pilot implementation uses a no-code stack optimized for speed-to-validation,
 
 ### Automation Scripts
 
-The repository contains six JavaScript automation scripts that run within Airtable's automation environment:
+The repository contains six JavaScript automation scripts designed to run within Airtable's automation environment. They have no local integration harness and are not evidenced as deployed:
 
 | Script | Trigger | Purpose |
 |--------|---------|---------|
@@ -364,9 +417,9 @@ This is a **specification-first repository**. There is no runtime application to
 
 6. **Read the feature specifications.** Start with `specs/features/state-authority/spec.md` (the foundational subsystem), then `specs/features/weekly-cycle-flow/spec.md` (the cadence engine), then `specs/features/pilot-mvp/spec.md` (the integration layer).
 
-### Building the Pilot (3 weeks)
+### Building the Pilot (roadmap estimate: 3 weeks)
 
-7. **Follow the implementation guides.** The `implementation/` directory contains step-by-step setup guides for Airtable and Retool, organized in three phases. Follow the execution order in `implementation/IMPLEMENTATION-STATUS.md`:
+7. **Follow the implementation guides.** The `implementation/` directory contains step-by-step setup guides for Airtable and Retool, organized in three phases. The three-week sequence below is a planning estimate from `implementation/IMPLEMENTATION-STATUS.md`, not a measured delivery time:
    - **Week 1:** Airtable foundation (8-12 hours) — State Authority tables, Weekly Cycle Flow tables, Pilot MVP tables, automations.
    - **Week 2:** Retool build (12-16 hours) — Core pages, workflow pages, pilot pages across AdminConsole and WarehouseOps apps.
    - **Week 3:** Validation (4-6 hours) — End-to-end testing, operator training, launch readiness.
@@ -375,11 +428,15 @@ This is a **specification-first repository**. There is no runtime application to
 
 ---
 
-## Features
+## Specified capabilities and pilot hypotheses
+
+The capabilities below are specified or represented by setup artifacts. They
+are not implemented by the current TypeScript package and have not been
+validated in a live pilot.
 
 ### Pilot MVP (25 Users)
 
-The pilot validates four hypotheses simultaneously:
+The proposed pilot is designed to test four hypotheses simultaneously:
 
 | Hypothesis | Metric | Target |
 |-----------|--------|--------|
@@ -388,7 +445,7 @@ The pilot validates four hypotheses simultaneously:
 | Weekly cycles can be executed reliably | On-time dispatch percentage | > 90% |
 | Probabilistic allocation produces acceptable fit | First-cycle fit satisfaction | > 80% |
 
-### Core Capabilities
+### Proposed core capabilities
 
 - **State Authority** — Canonical entity state management with transition contracts, event sourcing, and full audit trail. Enforces single-assignment constraints, weekly uniqueness, and lifecycle bounds. Zero tolerance for double-allocation or phantom inventory.
 
@@ -418,14 +475,14 @@ The project follows a five-epoch journey where each epoch builds on what the pre
 
 | Epoch | Name | Duration | Users | Primary Question | Status |
 |-------|------|----------|-------|------------------|--------|
-| 0 | Conception | Complete | 0 | What are we building? | Complete — all specs delivered |
+| 0 | Conception | Complete | 0 | What are we building? | Repository records specification set as complete |
 | 1 | Foundation Build | 3 weeks | 0 | Can we build the MVP? | Ready to execute |
 | 2 | Pilot Validation | 8-12 weeks | 25 | Does this work? | Next phase |
 | 3 | Intelligence Maturation | 12-24 weeks | 250 | Can we learn fast enough? | Post-pilot |
 | 4 | Controlled Scaling | 24-52 weeks | 2,500 | Can we grow profitably? | Future |
 | 5 | Sustained Operation | Ongoing | 2,500+ | Can we compound value? | Future |
 
-**Current milestone:** End of Epoch 0. All specifications complete. Implementation artifacts prepared. Awaiting execution of three-week foundation build.
+**Current milestone:** End of Epoch 0. The planned specification and setup-artifact set is present. No independent review approval is recorded. The foundation build remains unexecuted in the available evidence.
 
 ---
 
@@ -445,21 +502,21 @@ Your-Fit-Tailored sits within [ORGAN-III: Ergon](https://github.com/organvm-iii-
 
 ## Related Work
 
-Your-Fit-Tailored occupies a distinct position in the apparel subscription landscape. Existing services fall into several categories, each of which addresses a subset of the problems this platform solves:
+The design positions Your-Fit-Tailored against several apparel-service categories. The comparisons below record the repository's positioning argument; they are not a current, independently verified market survey:
 
-- **Styling services** (Stitch Fix, Trunk Club) solve decision fatigue through human curation but operate on a purchase model — garments are acquired, not circulated. No circular inventory, no compounding fit learning, and cognitive load increases with each keep-or-return decision.
+- **Styling services** are treated as purchase-oriented curation: garments are acquired rather than continuously circulated, and the user generally makes a keep-or-return decision.
 
-- **Rental platforms** (Rent the Runway, Nuuly) introduce garment circulation but optimize for occasion-based usage rather than weekly cadence. The user must actively browse, select, and time their rentals — cognitive load remains high.
+- **Rental platforms** are treated as circulation systems that usually retain user-led browsing and selection rather than making a fixed weekly cadence the system invariant.
 
-- **Subscription boxes** (various) provide recurring delivery but typically sell products rather than circulate assets. Each box is a discrete transaction, not a link in a learning chain.
+- **Subscription boxes** are treated as recurring delivery systems that may sell products rather than operate a closed-loop asset fleet.
 
-Your-Fit-Tailored differs by combining weekly cadence (a control system constraint, not a marketing choice), circular inventory (fleet economics, not retail COGS), probabilistic fit (belief distributions, not static measurements), and constitutional invariant-driven design (formal verification, not feature checklists). The system treats garments as stateful production assets that generate recurring value through utilization density rather than point-of-sale margin.
+The proposed distinction is the combination of weekly cadence (a control-system constraint), circular inventory (fleet economics), probabilistic fit (belief distributions), and constitutional-invariant-driven design. The model treats garments as stateful production assets intended to generate recurring value through utilization density rather than point-of-sale margin. Whether this distinction is commercially viable remains untested.
 
 ---
 
 ## Contributing
 
-This repository is currently in **pre-pilot specification phase**. The specifications are complete and the implementation artifacts are ready to execute. Contributions are welcome in the following areas:
+This repository is currently in a **design-only, pre-foundation-build phase**. The planned specifications and setup artifacts are present, but pilot readiness has not been demonstrated. Contributions are welcome in the following areas:
 
 1. **Specification review.** The formal specs in `specs/` benefit from domain expertise in subscription commerce, reverse logistics, circular economy operations, and probabilistic modeling. File issues for invariant violations, economic model gaps, or operational blind spots.
 
@@ -491,4 +548,4 @@ Builder of systems that compound. Your-Fit-Tailored is one expression of a broad
 
 ---
 
-*Last updated: 2026-02-10*
+*Status last verified against repository evidence: 2026-08-31*

@@ -1,0 +1,34 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.pilot-status.v1",
+  "assertion_class": "historical_record",
+  "statement": "The 2026-08-31 repository audit placed the project at the recorded end of Epoch 0 and did not evidence a completed foundation build, launch approval, pilot cohort, or operational cycle.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "roadmap-phase-state",
+      "independence_group": "repository-roadmap",
+      "evidence_type": "primary_source",
+      "reference": "roadmap/THERE-AND-BACK-AGAIN.md",
+      "body_hash": "sha256:48da67512389895145cdcc5255b8761756a4f44a41a5d6c27ed03b57e9d8c410",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "unchecked-launch-gate",
+      "independence_group": "repository-operations",
+      "evidence_type": "artifact",
+      "reference": "implementation/pilot-ops/launch-checklist.md",
+      "body_hash": "sha256:cf48b6fc0d2983d1789c4937bb11632d6cee85525bdf8b3d401244805c581a25",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "unchecked-pilot-tasks",
+      "independence_group": "repository-implementation",
+      "evidence_type": "artifact",
+      "reference": "specs/features/pilot-mvp/tasks.md",
+      "body_hash": "sha256:f20f10beb7a6407cc961d45caf2f03f2501106dbbd9b7c0e4969b62d9e8210fe",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

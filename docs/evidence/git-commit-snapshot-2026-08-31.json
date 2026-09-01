@@ -1,0 +1,42 @@
+{
+  "receipt_type": "git-commit-object-snapshot",
+  "repository": "4444J99/your-fit-tailored",
+  "observed_at": "2026-08-31T22:35:46Z",
+  "method": "git cat-file commit <full-commit-id> | sha256sum",
+  "objects": [
+    {
+      "commit": "c6bd4ce0cf2ca6b9a3709be0c3647e09b4a7dd74",
+      "raw_commit_sha256": "77eaf38993b5b39879bb3c527cdfe3a133f18235bb3cebf42527f7f12482f7ef",
+      "author": "4444jPPP <etceter4@etceter4.com>",
+      "recorded_summary": "Initialize Your-Fit-Tailored specification repository",
+      "recorded_co_author": "Claude Opus 4.5 <noreply@anthropic.com>"
+    },
+    {
+      "commit": "c37dff4813b75fc6678a1f6a41d54ac2ee14828d",
+      "raw_commit_sha256": "958c84c25383b7e06c3b4ca281f2db3385cad69c94b1a49b769c553496da29ef",
+      "author": "--4444-j--99---- <padavano.anthony@gmail.com>",
+      "recorded_summary": "Deploy Silver Sprint README: expand from 819 to 4,191 words"
+    },
+    {
+      "commit": "fd3cd4e3f97a572995147b90ac0015094cbfbba8",
+      "raw_commit_sha256": "50712f66e5a2014350fbef26ee42acd75b8acc4fb4f9e9880353115ea8c18288",
+      "author": "--4444-j--99---- <padavano.anthony@gmail.com>",
+      "recorded_summary": "feat: add subscription module — tier-based lifecycle management"
+    },
+    {
+      "commit": "a3ae8878eac8a8710d3f9ec933bfe053ad0609fd",
+      "raw_commit_sha256": "15d4f4c0e059b09c3f8794942da4a7a206fb44879587a196007db8d2bc66d213",
+      "author": "4444jPPP <etceter4@etceter4.com>",
+      "recorded_summary": "Add implementation artifacts for State Authority subsystem",
+      "recorded_co_author": "Claude Opus 4.5 <noreply@anthropic.com>"
+    },
+    {
+      "commit": "20f603df9d7891e807874ca678f1560f7bd07685",
+      "raw_commit_sha256": "87afac3d7b4bd5f33e0795d00530defc441dc4431f1a20426fde7bd27efc96cd",
+      "author": "4444jPPP <etceter4@etceter4.com>",
+      "recorded_summary": "Add implementation artifacts for Weekly Cycle Flow and Pilot MVP",
+      "recorded_co_author": "Claude Opus 4.5 <noreply@anthropic.com>"
+    }
+  ],
+  "boundary": "The digest binds each raw local Git commit object. It does not make later working-tree files part of those historical commits."
+}

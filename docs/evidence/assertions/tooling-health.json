@@ -1,0 +1,34 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.tooling-health.v1",
+  "assertion_class": "historical_record",
+  "statement": "At audited base commit 7d23744f1e689316631a5156753b5d7a52fcf0dc, the default dependency install and ESLint workflow were blocked by the declared TypeScript 7.0.2 and typescript-eslint 8.67.0 compatibility conflict.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "tooling-verification-receipt",
+      "independence_group": "local-verification",
+      "evidence_type": "fresh_verifier_receipt",
+      "reference": "docs/evidence/verification-2026-08-31.md",
+      "body_hash": "sha256:51afe4b1f6d177fa6fff655f5fb22d509454c3d124fb86a63b982249cd379715",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "package-manifest",
+      "independence_group": "repository-package-state",
+      "evidence_type": "primary_source",
+      "reference": "package.json",
+      "body_hash": "sha256:22e596e0b52f6f605206d21eba2ae710ea7f4a71994fbab60645ca519cd99880",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "package-lock",
+      "independence_group": "repository-package-state",
+      "evidence_type": "primary_source",
+      "reference": "package-lock.json",
+      "body_hash": "sha256:7eeadbdb5631fb84664f142a2d1c40f26c51372ab38dcd9c840224de49db972c",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

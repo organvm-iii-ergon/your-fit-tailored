@@ -1,0 +1,229 @@
+contract_name: project-record.v1
+contract_version: 1
+project_id: your-fit-tailored
+name: Your-Fit-Tailored
+canonical_repository: 4444J99/your-fit-tailored
+former_repositories:
+  - organvm-iii-ergon/your-fit-tailored
+repository_role: canonical
+documentation_class: A
+one_sentence: >-
+  A design and implementation-planning record for a proposed weekly clothing
+  service that would circulate garments, learn fit over time, and remove routine
+  shopping decisions.
+problem: >-
+  The project asks whether a recurring clothing service can reduce repeated
+  user decisions while keeping every subscriber promise, garment, box, weekly
+  cycle, failure, and recovery explicit enough for a circular operator to manage.
+intended_users:
+  - prospective apparel-service subscribers
+  - pilot and fulfillment operators
+  - circular-commerce system designers
+  - technical and product evaluators
+implementation_status: DESIGN_ONLY
+deployment_status: not-deployed
+authorship:
+  owner: Anthony James Padavano
+  role: project originator, systems designer, repository author, and maintainer
+  contributions:
+    - project framing and constitutional invariants
+    - system and operating-model design
+    - Airtable and Retool implementation artifacts
+    - TypeScript scaffold, tests, and continuous integration
+    - public documentation and repository maintenance
+  collaborators: []
+  generated:
+    - Foundational January 2026 commits explicitly credit Claude Opus 4.5 as co-author; exact line-level human and AI attribution is unavailable.
+  inherited: []
+  external:
+    - Dependabot-authored dependency update commits
+    - Open-source npm packages and GitHub Actions
+    - Airtable and Retool as proposed external pilot platforms
+claim_references:
+  - id: project-definition
+    claim_posture: proposed
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.project-definition.v1
+    assertion_ref: docs/evidence/assertions/project-definition.json
+    scope: identity
+    placements: [readme, general, humanities, business, evaluator, evidence]
+  - id: domain-architecture
+    claim_posture: proposed
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.domain-architecture.v1
+    assertion_ref: docs/evidence/assertions/domain-architecture.json
+    scope: capability
+    placements: [readme, technical, humanities, evaluator, evidence]
+  - id: implementation-package
+    claim_posture: partial
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.implementation-package.v1
+    assertion_ref: docs/evidence/assertions/implementation-package.json
+    scope: capability
+    placements: [readme, general, technical, business, evaluator, evidence]
+  - id: automation-scripts
+    claim_posture: partial
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.automation-scripts.v1
+    assertion_ref: docs/evidence/assertions/automation-scripts.json
+    scope: capability
+    placements: [readme, technical, business, evaluator, evidence]
+  - id: runtime-status
+    claim_posture: contradicted
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.runtime-status.v1
+    assertion_ref: docs/evidence/assertions/runtime-status.json
+    scope: status
+    placements: [readme, general, technical, humanities, business, evaluator, evidence]
+  - id: pilot-status
+    claim_posture: contradicted
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.pilot-status.v1
+    assertion_ref: docs/evidence/assertions/pilot-status.json
+    scope: status
+    placements: [readme, general, technical, humanities, business, evaluator, evidence]
+  - id: typescript-scaffold
+    claim_posture: partial
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.typescript-scaffold.v1
+    assertion_ref: docs/evidence/assertions/typescript-scaffold.json
+    scope: capability
+    placements: [readme, general, technical, evaluator, evidence]
+  - id: tooling-health
+    claim_posture: contradicted
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.tooling-health.v1
+    assertion_ref: docs/evidence/assertions/tooling-health.json
+    scope: limitation
+    placements: [readme, technical, evaluator, evidence]
+  - id: authorship-record
+    claim_posture: implemented
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.authorship-record.v1
+    assertion_ref: docs/evidence/assertions/authorship-record.json
+    scope: authorship
+    placements: [readme, humanities, evaluator, evidence]
+  - id: economics-status
+    claim_posture: proposed
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.economics-status.v1
+    assertion_ref: docs/evidence/assertions/economics-status.json
+    scope: capability
+    placements: [readme, general, business, evaluator, evidence]
+  - id: pages-publication
+    claim_posture: implemented
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.pages-publication.v1
+    assertion_ref: docs/evidence/assertions/pages-publication.json
+    scope: deployment
+    placements: [technical, business, evaluator, evidence]
+  - id: proposed-industry-application
+    claim_posture: proposed
+    assertion_contract: assertion-evidence.v1
+    assertion_id: yft.proposed-industry-application.v1
+    assertion_ref: docs/evidence/assertions/proposed-industry-application.json
+    scope: capability
+    placements: [business, evidence]
+limitations:
+  - id: no-domain-runtime
+    statement: The intended circular-apparel domain architecture is not implemented in src/.
+    assertion_ref: docs/evidence/assertions/runtime-status.json
+    assertion_id: yft.runtime-status.v1
+  - id: no-configured-pilot
+    statement: No configured Airtable or Retool environment, completed launch gate, pilot cohort, or operational cycle is evidenced.
+    assertion_ref: docs/evidence/assertions/pilot-status.json
+    assertion_id: yft.pilot-status.v1
+  - id: generic-scaffold-only
+    statement: The locally tested TypeScript package models generic catalog and subscription behavior rather than the specified platform.
+    assertion_ref: docs/evidence/assertions/typescript-scaffold.json
+    assertion_id: yft.typescript-scaffold.v1
+  - id: broken-default-tooling
+    statement: Standard dependency installation and ESLint are blocked by a TypeScript and typescript-eslint compatibility conflict.
+    assertion_ref: docs/evidence/assertions/tooling-health.json
+    assertion_id: yft.tooling-health.v1
+  - id: no-outcome-evidence
+    statement: No user, fit, retention, revenue, contribution-margin, environmental-impact, or scale outcome is evidenced.
+  - id: incomplete-policy-boundaries
+    statement: Payment integration, privacy, legal agreements, insurance, safety and hygiene, and production security remain incomplete.
+audience_routes:
+  - mode: general
+    path: docs/audiences/general.md
+    primary_question: What is this project, what would it do, and what exists now?
+    surface: public
+    search_intents: [informational, problem]
+  - mode: technical
+    path: docs/audiences/technical.md
+    primary_question: What is specified, what actually runs, and where are the technical boundaries?
+    surface: public
+    search_intents: [technical, implementation]
+  - mode: humanities
+    path: docs/audiences/humanities.md
+    primary_question: What does the design imply about dress, agency, memory, labor, and time?
+    surface: public
+    search_intents: [research, informational]
+  - mode: business
+    path: docs/audiences/business.md
+    primary_question: What operational workflow is proposed and what would be required to test it credibly?
+    surface: public
+    search_intents: [commercial, problem, comparative]
+  - mode: evaluator
+    path: docs/audiences/evaluator.md
+    primary_question: What did Anthony contribute and where can each material claim be inspected?
+    surface: public
+    search_intents: [hiring, implementation]
+industries:
+  - name: circular apparel subscription operations
+    status: proposed
+    claim_references: [proposed-industry-application]
+concepts:
+  - circular-inventory
+  - cognitive-load-minimization
+  - event-sourced-state
+  - probabilistic-fit
+  - reverse-logistics
+  - temporal-service
+  - weekly-cadence
+search_intents:
+  - intent: informational
+    terms:
+      - circular weekly apparel subscription
+      - clothing service without shopping
+      - temporal service design
+  - intent: problem
+    terms:
+      - reduce clothing decision fatigue
+      - track reusable garment inventory
+      - prevent circular inventory state drift
+  - intent: technical
+    terms:
+      - event-sourced garment lifecycle
+      - weekly subscription state machine
+      - Airtable circular inventory architecture
+  - intent: comparative
+    terms:
+      - circular apparel service vs subscription box
+      - clothing circulation vs retail ownership
+  - intent: commercial
+    terms:
+      - circular apparel pilot operating model
+      - weekly clothing subscription unit economics
+  - intent: research
+    terms:
+      - dress agency and algorithmic choice
+      - probabilistic fit and body data
+      - circular time in service design
+  - intent: hiring
+    terms:
+      - systems product design portfolio
+      - specification driven development case study
+  - intent: implementation
+    terms:
+      - Airtable Retool apparel pilot
+      - circular inventory pilot checklist
+links:
+  repository: https://github.com/4444J99/your-fit-tailored
+  documentation: docs/README.md
+  project_page: https://4444j99.github.io/your-fit-tailored/
+  evidence: docs/evidence/README.md
+generated_at: "2026-08-31T22:35:46Z"
+verified_at: "2026-08-31T22:35:46Z"

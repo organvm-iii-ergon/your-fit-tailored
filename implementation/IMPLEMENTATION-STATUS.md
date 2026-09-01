@@ -2,21 +2,23 @@
 
 ## Overview
 
-This document tracks implementation progress across all three phases required for the 25-user pilot.
+This document inventories the setup artifacts and unexecuted work across the three phases proposed for a 25-user pilot. A checked artifact below means that the file or instruction exists in this repository; it does not mean that Airtable, Retool, or a pilot environment has been configured.
 
 **Target Platform**: Airtable + Retool (no-code pilot)
-**Documentation**: Complete
-**Implementation**: Ready to execute
+**Repository artifact set**: Present
+**External configuration**: Not evidenced
+**End-to-end validation**: Not completed
+**Pilot execution**: Not started in the available record
 
 ---
 
 ## Phase Summary
 
-| Phase | Specs | Implementation Artifacts | Status |
-|-------|-------|--------------------------|--------|
-| State Authority | ✅ Complete | ✅ Complete | Ready |
-| Weekly Cycle Flow | ✅ Complete | ✅ Complete | Ready |
-| Pilot MVP | ✅ Complete | ✅ Complete | Ready |
+| Phase | Planned specs present | Setup artifacts present | Execution status |
+|-------|-----------------------|-------------------------|------------------|
+| State Authority | Yes | Yes | Not configured or end-to-end tested |
+| Weekly Cycle Flow | Yes | Yes | Not configured or end-to-end tested |
+| Pilot MVP | Yes | Yes | Not configured, approved, or run |
 
 ---
 
@@ -328,6 +330,6 @@ implementation/
 
 ## Legend
 
-- ✅ Complete - Documentation and artifacts created
-- Ready to execute - Follow setup guides
-- Pending - Waiting on dependencies
+- Checked artifact - The named repository file or instruction exists
+- Ready to execute - The setup task is documented but remains unexecuted
+- Pending - Waiting on configuration, dependencies, or validation

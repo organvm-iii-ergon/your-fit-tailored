@@ -1,4 +1,4 @@
-# seed.yaml — Automation Contract for organvm-iii-ergon/your-fit-tailored
+# seed.yaml — Automation Contract for 4444J99/your-fit-tailored
 # Schema: seed/v1.0
 # Generated: 2026-02-17 (SENSORIA Sprint)
 
@@ -6,15 +6,15 @@ schema_version: "1.0"
 organ: III
 organ_name: Commerce
 repo: your-fit-tailored
-org: organvm-iii-ergon
+org: 4444J99
 
 metadata:
-  implementation_status: ACTIVE
+  implementation_status: DESIGN_ONLY
   tier: standard
   promotion_status: PUBLIC_PROCESS
-  deployment_url: "https://organvm-iii-ergon.github.io/your-fit-tailored/"
+  deployment_url: "https://4444j99.github.io/your-fit-tailored/"
   deployment_platform: github-pages
-  last_validated: "2026-02-28"
+  last_validated: "2026-08-31"
   generated: "2026-02-17"
   sprint: "SENSORIA"
   language: javascript
@@ -22,7 +22,7 @@ metadata:
 agents:
   - name: ci
     trigger: on_push
-    workflow: .github/workflows/ci-typescript.yml
+    workflow: .github/workflows/ci.yml
     description: "Continuous integration pipeline"
 
 produces:
