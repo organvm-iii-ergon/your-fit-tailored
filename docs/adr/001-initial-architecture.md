@@ -39,4 +39,4 @@ Key architectural choices:
 
 - Part of the [organvm eight-organ system](https://github.com/meta-organvm)
 - Organ: ORGAN-III (Ergon)
-- Registry: `registry-v2.json` in [organvm-corpvs-testamentvm](https://github.com/meta-organvm/organvm-corpvs-testamentvm)
+- Registry: `registry-v2.json` in the ORGANVM corpus repository

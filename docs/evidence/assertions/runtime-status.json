@@ -1,0 +1,42 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.runtime-status.v1",
+  "assertion_class": "historical_record",
+  "statement": "During the 2026-08-31 reconciliation, canonical repository metadata was set to DESIGN_ONLY because the intended circular-apparel domain platform had no executable runtime in the audited tree, local source contained only generic in-memory utilities, and ecosystem delivery was marked not started.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "catalog-source",
+      "independence_group": "repository-source",
+      "evidence_type": "primary_source",
+      "reference": "src/catalog.ts",
+      "body_hash": "sha256:913a8437565ca736fbdc06d55b9a7a57e6076f01c61949cf50188851a1616a0c",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "subscription-source",
+      "independence_group": "repository-source",
+      "evidence_type": "primary_source",
+      "reference": "src/subscription.ts",
+      "body_hash": "sha256:bf55d11de10654ba36ede1808c904c6179869604e9cc3a682efb02fb6fbdda13",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "ecosystem-delivery-state",
+      "independence_group": "repository-governance",
+      "evidence_type": "artifact",
+      "reference": "ecosystem.yaml",
+      "body_hash": "sha256:4052b501feb1f3a5068574e4f3335c5eb628f16241f38b0cd258382c3fe5e7fe",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "normalized-seed-status",
+      "independence_group": "repository-governance",
+      "evidence_type": "artifact",
+      "reference": "seed.yaml",
+      "body_hash": "sha256:fcf8a851f0f1f69bfaa6619ab2b14e19a44e72823a3d3c07dad0adca09411033",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

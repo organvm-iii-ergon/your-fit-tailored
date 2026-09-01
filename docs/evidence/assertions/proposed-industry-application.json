@@ -1,0 +1,19 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.proposed-industry-application.v1",
+  "assertion_class": "inference",
+  "statement": "Because the repository specifies a weekly apparel cycle, reusable-inventory state, operator workflows, and per-cycle economics, circular apparel subscription operations are a substantive proposed application; no configured service, pilot, or operating outcome is established.",
+  "inference_label": "Proposed circular-apparel operating model, not configured service, pilot, or outcome evidence.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "yft-business-operating-model-analysis",
+      "independence_group": "reader-mode-business-analysis",
+      "evidence_type": "artifact",
+      "reference": "docs/audiences/business.md",
+      "body_hash": "sha256:3ef305788c1a001f9de6a3c3da655759916484c46dfe8f20873e626f56f1c9dd",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

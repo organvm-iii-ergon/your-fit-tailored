@@ -1,0 +1,22 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.economics-status.v1",
+  "assertion_class": "historical_record",
+  "statement": "The repository contains a per-cycle economic model, simulation artifacts, sensitivity variables, and kill conditions, but those materials are models rather than observed operating results.",
+  "verification_state": "verified",
+  "freshness": {
+    "verified_at": "2026-08-31T22:35:46Z",
+    "status": "not_applicable"
+  },
+  "evidence_references": [
+    {
+      "evidence_id": "economic-simulator-model",
+      "independence_group": "repository-economics",
+      "evidence_type": "primary_source",
+      "reference": "specs/economics/simulator-model.md",
+      "body_hash": "sha256:60be2d1ddf0c1f54fbc0b108061ebbd025b0397c85f0e4b40f6ed10c2e8cf73b",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

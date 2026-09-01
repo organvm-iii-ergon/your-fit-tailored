@@ -1,0 +1,30 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.authorship-record.v1",
+  "assertion_class": "historical_record",
+  "statement": "Git history identifies Anthony James Padavano and persistent account aliases as the primary human repository owner and maintainer, while foundational January 2026 commits explicitly credit Claude Opus 4.5 as co-author.",
+  "verification_state": "verified",
+  "freshness": {
+    "verified_at": "2026-08-31T22:35:46Z",
+    "status": "not_applicable"
+  },
+  "evidence_references": [
+    {
+      "evidence_id": "canonical-authorship-owner-record",
+      "independence_group": "repository-owner-record",
+      "evidence_type": "owner_record",
+      "reference": "project-record.yml",
+      "body_hash": "sha256:1847fc288b51f69631c3fb605f7e28a5579eeaa82feae6418bf9d5280405ba09",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "authorship-git-object-snapshot",
+      "independence_group": "local-git-receipt",
+      "evidence_type": "immutable_source_event",
+      "reference": "docs/evidence/git-commit-snapshot-2026-08-31.json",
+      "body_hash": "sha256:65460a6cef072bf145b31ce309f4efc8fa4c8468dde23fc4b6060fc3a8d0fe7a",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

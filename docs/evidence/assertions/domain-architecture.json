@@ -1,0 +1,22 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.domain-architecture.v1",
+  "assertion_class": "historical_record",
+  "statement": "The repository specifies four canonical entity types, seven logical subsystems, state-transition principles, normal weekly flow, and explicit failure paths for the intended service.",
+  "verification_state": "verified",
+  "freshness": {
+    "verified_at": "2026-08-31T22:35:46Z",
+    "status": "not_applicable"
+  },
+  "evidence_references": [
+    {
+      "evidence_id": "core-system-specification",
+      "independence_group": "repository-specification",
+      "evidence_type": "primary_source",
+      "reference": "specs/core-system/spec.md",
+      "body_hash": "sha256:2dd1906a490ba52fb580f06920bae01813418ee5a7b172c34ce9311936980030",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}

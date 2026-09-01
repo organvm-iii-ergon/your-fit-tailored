@@ -1,0 +1,34 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "yft.typescript-scaffold.v1",
+  "assertion_class": "historical_record",
+  "statement": "At audited base commit 7d23744f1e689316631a5156753b5d7a52fcf0dc, the generic TypeScript scaffold built and its 16 unit tests passed after a legacy-peer-dependency install, but those tests did not exercise the intended circular-apparel domain.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "local-verification-receipt",
+      "independence_group": "local-verification",
+      "evidence_type": "fresh_verifier_receipt",
+      "reference": "docs/evidence/verification-2026-08-31.md",
+      "body_hash": "sha256:51afe4b1f6d177fa6fff655f5fb22d509454c3d124fb86a63b982249cd379715",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "catalog-tests",
+      "independence_group": "repository-tests",
+      "evidence_type": "primary_source",
+      "reference": "tests/catalog.test.ts",
+      "body_hash": "sha256:71c3fad1e1518c3f0d46445962a1b3ebb9da656c2ba81cbbb0e06f01733c2907",
+      "observed_at": "2026-08-31T22:35:46Z"
+    },
+    {
+      "evidence_id": "subscription-tests",
+      "independence_group": "repository-tests",
+      "evidence_type": "primary_source",
+      "reference": "tests/subscription.test.ts",
+      "body_hash": "sha256:48a5722b7bc6dfb92764922140271f80251bfdee0b478919558efe1805f5e4df",
+      "observed_at": "2026-08-31T22:35:46Z"
+    }
+  ]
+}
